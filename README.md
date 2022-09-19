@@ -39,3 +39,7 @@ Módulo de seguimiento de clase KeepCoding Web13. Centrado en Frontend con JavaS
 - Primero se crea (document.createElement)
 - Luego se rellena con el contenido, atributos, etc...
 - Se anexa al nodo superior adecuado.
+
+# PREGUNTAS
+- ¿por qué no funcionan los requires?
+- ¿funcionan por defecto los módulos como ES6 y no como CJS?
