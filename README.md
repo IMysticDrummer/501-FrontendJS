@@ -30,3 +30,12 @@ Módulo de seguimiento de clase KeepCoding Web13. Centrado en Frontend con JavaS
 - Permite señalar y manejar el rendereizado de nuestro contenido.
 - Es un árbol jerárquico dinámico
 - Los nodos del árbol son cada etiqueta html que tenemos declaradas. Todos son instancias de una clase llamada htmelement.
+
+## Navegando por el árbol
+- $0 en la consola del navegador nos devuelve una referencia a ese elemento.
+    - Esto nos permite seleccionar etiquetas y modificar elementos en caliente, **sin ningún tipo de persistencia** Si recargamos la página, se deshacen los cambios y persiste el código
+
+## Creando elementos
+- Primero se crea (document.createElement)
+- Luego se rellena con el contenido, atributos, etc...
+- Se anexa al nodo superior adecuado.
