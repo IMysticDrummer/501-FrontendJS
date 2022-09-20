@@ -44,4 +44,16 @@ Módulo de seguimiento de clase KeepCoding Web13. Centrado en Frontend con JavaS
 - Luego se rellena con el contenido, atributos, etc...
 - Se anexa al nodo superior adecuado.
 
+## Asegurar la carga del DOM
+- Antes de "pintar" nada en nuestro html, tenemos que asegurarnos que el DOM esté bien cargado.
+Para ello, utilizamos el código:
+`document.addEventListener('DOMContentLoaded', ()=>{  
+    console.log('DOM listo');  
+    ...
+});`
+
+## Propagación de eventos
+- Cuando se produce un evento en un elemento contenido dentro de otros, el evento se propaga por todos los padres contenedores. Otra cosa es que nosotros no estemos escuchando.
+- Se puede puede parar la propagación de evento con el código `evento.stopPropagation()`. Hay que tener en cuenta que si usamos el mismo manejador de eventos, pararíamos la propagación desde el principio y no se propagaría.
 # PREGUNTAS
+- ¿cómo parar la propagación de eventos en un punto en concreto? ¿cómo usar otro manejador de eventos?
