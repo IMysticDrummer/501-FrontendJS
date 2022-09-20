@@ -14,16 +14,21 @@
 
   <!-- Cargamos el javascript -->
 
-  <script type="module">
-    import {loadTweets} from './load-tweets.js';
-    //Evento que garantiza que el DOM esté listo para poder ser
-    //modificado
-    document.addEventListener('DOMContentLoaded', ()=>{
-      console.log('DOM listo');
-      loadTweets();
-    });
-  </script>
+  <script type="module" src="./load-tweets.js"></script>
 
+  <script>
+    /*
+    const deleteButtonElement=document.querySelector('button');
+    deleteButtonElement.addEventListener('click', ()=>{
+      console.log(deleteButtonElement);
+    });
+    */
+    function deleteTweet(event) {
+      
+      console.log('borrar tweet');
+      event.path[1].remove();
+    };
+  </script>
 
 </body>
 </html>

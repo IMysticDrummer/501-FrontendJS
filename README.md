@@ -55,5 +55,8 @@ Para ello, utilizamos el código:
 ## Propagación de eventos
 - Cuando se produce un evento en un elemento contenido dentro de otros, el evento se propaga por todos los padres contenedores. Otra cosa es que nosotros no estemos escuchando.
 - Se puede puede parar la propagación de evento con el código `evento.stopPropagation()`. Hay que tener en cuenta que si usamos el mismo manejador de eventos, pararíamos la propagación desde el principio y no se propagaría.
+- Los eventos se pueden capturar. Dentro del evento hay una propiedad *path* que permite acceder al árbol, en forma de array, desde el propio elemento hasta el document. Se puede acceder a esos elementos y hacer acciones sobre ellos.
+Por ejemplo:
+    `event.path[1].remove();` --> Eliminará el elemento padre.
 # PREGUNTAS
 - ¿cómo parar la propagación de eventos en un punto en concreto? ¿cómo usar otro manejador de eventos?
