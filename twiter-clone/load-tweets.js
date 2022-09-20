@@ -1,7 +1,7 @@
 //Este es el controlador
 
 //importamos la fuente de datos --> Modelo
-import { tweets } from "./tweet-service.js";
+import { getTweets } from "./tweet-service.js";
 //importamos la construcción de vista --> Vista
 import { buildTweetView } from "./tweet-view.js";
 
@@ -13,13 +13,21 @@ import { buildTweetView } from "./tweet-view.js";
  * 
  * @param {DOMnode} tweetsContainerElement 
  */
-export function loadTweetsController(tweetsContainerElement){
-  for (const tweet of tweets) {
-    const articleElement=document.createElement('article');
-      
-    articleElement.innerHTML=buildTweetView(tweet);
+export async function loadTweetsController(tweetsContainerElement){
+  try {
+    const tweets=await getTweets();
+    for (const tweet of tweets) {
+      const articleElement=document.createElement('article');
+        
+      articleElement.innerHTML=buildTweetView(tweet);
+    
+      tweetsContainerElement.appendChild(articleElement);
+    };
+    
+  } catch (error) {
+    console.log(error);
+  }
   
-    tweetsContainerElement.appendChild(articleElement);
-  };
+
 
 };
