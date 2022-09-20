@@ -10,7 +10,6 @@ export const buildTweetView= (tweet) => {
   const formattedDate=new Date(tweet.date);
 
   const tweetView=`
-    <button onclick="deleteTweet(event)"> X </button>
     <p>${tweet.handler}</p>
     <p>${tweet.body}</p>
     <p>${formattedDate.toISOString()}</p>
