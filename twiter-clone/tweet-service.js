@@ -1,8 +1,8 @@
 'use strict';
 //Exportamos la fuente de datos
+//Este es nuestro modelo
 
 export const tweets = [
-//const tweets = [
   {
     date: '2022-09-19',
     body: 'ejemplo de cuerpo de tweet',
@@ -21,5 +21,3 @@ export const tweets = [
     handler: '@usuario4',
     image: 'https://333333.jpeg'
   }];
-
-//module.export=tweets;

@@ -4,6 +4,8 @@ Módulo de seguimiento de clase KeepCoding Web13. Centrado en Frontend con JavaS
 ## Enlaces recomendados por Edu
 - [JavaScript.info](https://javascript.info/) Página de información sobre javascript
 - [Can I Use](https://caniuse.com/)
+- [Información sobre async y defer en llamadas script html](https://javascript.info/script-async-defer)
+
 
 ## Notas importantes
 - No es muy normal que las primeras cargas de una página web tengan mucha carga de javascript. Deberíamos realizar cargas muy rápidas.
@@ -21,6 +23,8 @@ Módulo de seguimiento de clase KeepCoding Web13. Centrado en Frontend con JavaS
 # Javascript en el navegador
 - Debemos utilizar el uso de **módulos** en la importación de javascript en html. Se hace con
     - `<script type="module" src="./index-module.js"></script>`
+    - **OJO** Módulos CommonJS no están soportados en el navegador (require no está soportado). Por tanto
+    se deben usar módulos ES6 con import y export.
 
 # BOM (Browser Object Model)
 - El **BOM** publica una serie de objetos en el contexto de JavaScript para poder controlar el navegador web.
@@ -36,10 +40,8 @@ Módulo de seguimiento de clase KeepCoding Web13. Centrado en Frontend con JavaS
     - Esto nos permite seleccionar etiquetas y modificar elementos en caliente, **sin ningún tipo de persistencia** Si recargamos la página, se deshacen los cambios y persiste el código
 
 ## Creando elementos
-- Primero se crea (document.createElement)
+- Primero se crea el nodo (document.createElement)
 - Luego se rellena con el contenido, atributos, etc...
 - Se anexa al nodo superior adecuado.
 
 # PREGUNTAS
-- ¿por qué no funcionan los requires?
-- ¿funcionan por defecto los módulos como ES6 y no como CJS?

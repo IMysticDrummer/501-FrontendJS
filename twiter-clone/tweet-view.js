@@ -1,6 +1,12 @@
-export const buildTweetView= (tweet) => {
+//Esta es la vista
 
-//const buildTweetView = (tweet) => {
+/**
+ * This function returns an string containing HTML code which the tweet data in paragraphs.
+ * <p>handler</p><p>body</p><p>date</p>
+ * @param {Object} tweet 
+ * @returns 
+ */
+export const buildTweetView= (tweet) => {
   const formattedDate=new Date(tweet.date);
 
   const tweetView=`
@@ -12,4 +18,3 @@ export const buildTweetView= (tweet) => {
   return tweetView;
 };
 
-//module.export=buildTweetView;
