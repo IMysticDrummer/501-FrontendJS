@@ -8,13 +8,18 @@
  */
 export const buildTweetView= (tweet) => {
   const formattedDate=new Date(tweet.date);
-
+/*
   const tweetView=`
     <p>${tweet.handler}</p>
     <p>${tweet.body}</p>
     <p>${formattedDate.toISOString()}</p>
   `;
-
+*/
+  const tweetView=`
+    <p>${tweet.handle}</p>
+    <p>${tweet.content}</p>
+    <p>${formattedDate.toISOString()}</p>
+  `;
   return tweetView;
 };
 
