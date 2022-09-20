@@ -12,10 +12,44 @@
   <!-- Preparamos una estructura base  -->
   <section id="tweet-list"></section>
 
-  <!-- Cargamos el javascript -->
-  <script type="module" src="./load-tweets.js">
-    
+  <p id="test"></p>
+  <button onclick="updateParagraphText()">clicame</button>
 
+  <button id="magicButton">clicame mágico</button>
+
+  <button id="magicButton2">clicame mágico2</button>
+
+  <button id="magicButton3">clicame mágico3</button>
+
+  <!-- Cargamos el javascript -->
+  <script type="module" src="./load-tweets.js"></script>
+
+  <!-- Forma declarativa -->
+  <script>
+    function updateParagraphText() {
+      document.getElementById('test').innerHTML=new Date()
+    }
+    
+    //Forma imperativa
+    const buttonElement=document.getElementById("magicButton");
+
+    //Con función normal
+    function clickHandler() {
+      document.getElementById('test').innerHTML=new Date();
+    }
+    buttonElement.addEventListener('click', clickHandler);
+
+    //Con función anónima
+    const buttonElement2=document.getElementById("magicButton2");
+    buttonElement2.addEventListener('click', function () {
+      document.getElementById('test').innerHTML=new Date();
+    });
+
+    //Con función arrow
+    const buttonElement3=document.getElementById("magicButton3");
+    buttonElement3.addEventListener('click', () => {
+      document.getElementById('test').innerHTML=new Date();
+    });
   </script>
 
 </body>
