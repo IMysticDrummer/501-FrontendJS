@@ -13,9 +13,11 @@ import { buildTweetView } from "./tweet-view.js";
  * 
  * @param {DOMnode} tweetsContainerElement 
  */
-export async function loadTweetsController(tweetsContainerElement){
+export async function loadTweetsController(tweetsContainerElement, spinnerElement){
   try {
     const tweets=await getTweets();
+    //spinnerElement.remove(); Sólo lo eliminaríamos si no lo vamos a utilizar más.
+    spinnerElement.classList.toggle('hide');
     for (const tweet of tweets) {
       const articleElement=document.createElement('article');
         

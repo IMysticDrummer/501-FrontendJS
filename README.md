@@ -6,6 +6,7 @@ Módulo de seguimiento de clase KeepCoding Web13. Centrado en Frontend con JavaS
 - [Can I Use](https://caniuse.com/)
 - [Información sobre async y defer en llamadas script html](https://javascript.info/script-async-defer)
 - [JSON Placeholder](https://jsonplaceholder.typicode.com/) API pública que devuelve datos. Muy útil para pruebas
+- [Pure Spinners, para web](https://loading.io/css/)
 
 
 ## Notas importantes
