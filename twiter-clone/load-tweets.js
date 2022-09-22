@@ -3,7 +3,7 @@
 //importamos la fuente de datos --> Modelo
 import { getTweets } from "./tweet-service.js";
 //importamos la construcción de vista --> Vista
-import { buildTweetView } from "./tweet-view.js";
+import { buildTweetView, buildTweetListSpinner } from "./tweet-view.js";
 
 
 /**
@@ -13,11 +13,15 @@ import { buildTweetView } from "./tweet-view.js";
  * 
  * @param {DOMnode} tweetsContainerElement 
  */
-export async function loadTweetsController(tweetsContainerElement, spinnerElement){
+export async function loadTweetsController(tweetsContainerElement){
+
+  tweetsContainerElement.innerHTML=buildTweetListSpinner();
+
   try {
     const tweets=await getTweets();
-    //spinnerElement.remove(); Sólo lo eliminaríamos si no lo vamos a utilizar más.
-    spinnerElement.classList.toggle('hide');
+    //tweetsContainerElement.querySelector('.spinner').remove(); Sólo lo eliminaríamos si no lo vamos a utilizar más.
+    tweetsContainerElement.querySelector('.spinner').classList.toggle('hide');
+
     for (const tweet of tweets) {
       const articleElement=document.createElement('article');
         

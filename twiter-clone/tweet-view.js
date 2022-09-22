@@ -23,3 +23,7 @@ export const buildTweetView= (tweet) => {
   return tweetView;
 };
 
+export const buildTweetListSpinner =()=>{
+  return '<div class="spinner"><div></div><div></div><div></div></div>';
+};
+

@@ -11,6 +11,7 @@ Módulo de seguimiento de clase KeepCoding Web13. Centrado en Frontend con JavaS
 
 ## Notas importantes
 - No es muy normal que las primeras cargas de una página web tengan mucha carga de javascript. Deberíamos realizar cargas muy rápidas.
+- **Un controlador sólo debe gestionar un nodo del DOM**
 
 ## Cómo funciona un navegador
 - **User Interface**
