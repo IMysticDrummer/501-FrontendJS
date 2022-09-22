@@ -42,20 +42,20 @@ export class TweetListController {
   async loadTweets () {
 
     this.tweetsContainerElement.innerHTML=buildTweetListSpinner();
-    
+    let tweets=[];
+
     try {
-      const tweets=await getTweets();
-      //tweetsContainerElement.querySelector('.spinner').remove(); Sólo lo eliminaríamos si no lo vamos a utilizar más.
-      this.tweetsContainerElement.querySelector('.spinner').classList.toggle('hide');
-    
-      if (tweets.length===0) { this.showTweetsNotFound(); };
-
-      this.drawTweets();
-
+      tweets=await getTweets();
     } catch (error) {
-      console.log(error);
+      alert(error);
     }
+    
+    //tweetsContainerElement.querySelector('.spinner').remove(); Sólo lo eliminaríamos si no lo vamos a utilizar más.
+    this.tweetsContainerElement.querySelector('.spinner').classList.toggle('hide');
+  
+    if (tweets.length===0) { this.showTweetsNotFound(); };
 
+    this.drawTweets(tweets);
   }
 }
 
