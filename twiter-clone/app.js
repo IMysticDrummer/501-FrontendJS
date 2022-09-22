@@ -3,7 +3,7 @@
 
 //importar el controlador
 //import {loadTweetsController} from './load-tweets.js';
-import {TweetListController} from './load-tweets.js';
+import {TweetListController} from './tweet-list/TweetListController.js';
 
 //Aseguramos que el DOM está listo para ser operado
 document.addEventListener('DOMContentLoaded', ()=>{

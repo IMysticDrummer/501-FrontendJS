@@ -1,9 +1,9 @@
 //Este es el controlador
 
 //importamos la fuente de datos --> Modelo
-import { getTweets } from "./tweet-service.js";
+import { getTweets } from "./tweet-provider.js";
 //importamos la construcción de vista --> Vista
-import { buildTweetView, buildTweetListSpinner, buildEmptyTweetList } from "./tweet-view.js";
+import { buildTweetView, buildTweetListSpinner, buildEmptyTweetList } from "./tweet-list-view.js";
 
 
 /**Cambio a clase */
