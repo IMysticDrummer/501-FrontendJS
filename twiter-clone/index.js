@@ -2,7 +2,8 @@
 
 
 //importar el controlador
-import {loadTweetsController} from './load-tweets.js';
+//import {loadTweetsController} from './load-tweets.js';
+import {TweetListController} from './load-tweets.js';
 
 //Aseguramos que el DOM está listo para ser operado
 document.addEventListener('DOMContentLoaded', ()=>{
@@ -14,5 +15,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
   //DOM. Así que lo que hacemos es pasar la referencia
   //del nodo sobre el que queremos que el controlador
   //trabaje.
-  loadTweetsController(tweetListElement);
+  //loadTweetsController(tweetListElement);
+
+  const tweetListController=new TweetListController(tweetListElement);
 });
