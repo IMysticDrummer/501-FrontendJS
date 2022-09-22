@@ -32,7 +32,8 @@ export async function getTweets(){
     try {
       const response= await fetch(tweetsURL);
       const tweets=await response.json();
-      resolve(tweets);
+      //resolve(tweets);
+      resolve([]);
     } catch (error) {
       console.log(error);
     }

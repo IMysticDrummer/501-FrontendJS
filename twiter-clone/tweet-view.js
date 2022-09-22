@@ -27,3 +27,7 @@ export const buildTweetListSpinner =()=>{
   return '<div class="spinner"><div></div><div></div><div></div></div>';
 };
 
+export const buildEmptyTweetList=()=>{
+  return '<h2>No hay tweets disponibles</h2>';
+};
+

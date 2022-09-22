@@ -3,7 +3,7 @@
 //importamos la fuente de datos --> Modelo
 import { getTweets } from "./tweet-service.js";
 //importamos la construcción de vista --> Vista
-import { buildTweetView, buildTweetListSpinner } from "./tweet-view.js";
+import { buildTweetView, buildTweetListSpinner, buildEmptyTweetList } from "./tweet-view.js";
 
 
 /**Cambio a clase */
@@ -18,6 +18,27 @@ export class TweetListController {
     this.loadTweets();
   }
 
+  showTweetsNotFound(){
+    //Si no hay tweets
+    //Creamos un nodo para colgar el "texto"
+    // Lo adjuntamos al nodo padre
+    // Hacemos un outerHTML para cargarnos el div y dejarlo colgado del padre
+    const divElement=document.createElement('div');
+    this.tweetsContainerElement.appendChild(divElement);
+    divElement.outerHTML=buildEmptyTweetList();
+  }
+
+  drawTweets(tweets){
+    for (const tweet of tweets) {
+      const articleElement=document.createElement('article');
+        
+      articleElement.innerHTML=buildTweetView(tweet);
+    
+      this.tweetsContainerElement.appendChild(articleElement);
+    };
+
+  }
+
   async loadTweets () {
 
     this.tweetsContainerElement.innerHTML=buildTweetListSpinner();
@@ -27,14 +48,10 @@ export class TweetListController {
       //tweetsContainerElement.querySelector('.spinner').remove(); Sólo lo eliminaríamos si no lo vamos a utilizar más.
       this.tweetsContainerElement.querySelector('.spinner').classList.toggle('hide');
     
-      for (const tweet of tweets) {
-        const articleElement=document.createElement('article');
-          
-        articleElement.innerHTML=buildTweetView(tweet);
-      
-        this.tweetsContainerElement.appendChild(articleElement);
-      };
-      
+      if (tweets.length===0) { this.showTweetsNotFound(); };
+
+      this.drawTweets();
+
     } catch (error) {
       console.log(error);
     }
