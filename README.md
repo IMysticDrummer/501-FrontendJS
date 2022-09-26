@@ -64,5 +64,9 @@ Para ello, utilizamos el código:
 - Los eventos se pueden capturar. Dentro del evento hay una propiedad *path* que permite acceder al árbol, en forma de array, desde el propio elemento hasta el document. Se puede acceder a esos elementos y hacer acciones sobre ellos.
 Por ejemplo:
     `event.path[1].remove();` --> Eliminará el elemento padre.
+
+## PubSub
+Sirve para comunicación de mensajes entre componentes de la aplicación.  
+Hay librerías pubSub en internet que se pueden usar.
 # PREGUNTAS
 - ¿cómo parar la propagación de eventos en un punto en concreto? ¿cómo usar otro manejador de eventos?

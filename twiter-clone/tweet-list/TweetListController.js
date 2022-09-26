@@ -4,6 +4,7 @@
 import { getTweets } from "./tweet-provider.js";
 //importamos la construcción de vista --> Vista
 import { buildTweetView, buildTweetListSpinner, buildEmptyTweetList } from "./tweet-list-view.js";
+import { pubSub } from "../../pubSub.js";
 
 
 /**Cambio a clase */
@@ -49,7 +50,8 @@ export class TweetListController {
       tweets=await getTweets();
     } catch (error) {
       //alert(error);
-      this.notificationController.showNotification(error);
+      //this.notificationController.showNotification(error);
+      pubSub.publish(pubSub.TOPICS.NOTIFICATION_ERROR, error);
     }
     
     //tweetsContainerElement.querySelector('.spinner').remove(); Sólo lo eliminaríamos si no lo vamos a utilizar más.
