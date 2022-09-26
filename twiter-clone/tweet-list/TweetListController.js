@@ -13,8 +13,9 @@ export class TweetListController {
    * Indicate the parent node to hang up the tweets list
    * @param {DOMnode} nodeElement 
    */
-  constructor(nodeElement) {
+  constructor(nodeElement, notificationController) {
     this.tweetsContainerElement=nodeElement;
+    this.notificationController=notificationController;
     this.loadTweets();
   }
 
@@ -47,7 +48,8 @@ export class TweetListController {
     try {
       tweets=await getTweets();
     } catch (error) {
-      alert(error);
+      //alert(error);
+      this.notificationController.showNotification(error);
     }
     
     //tweetsContainerElement.querySelector('.spinner').remove(); Sólo lo eliminaríamos si no lo vamos a utilizar más.

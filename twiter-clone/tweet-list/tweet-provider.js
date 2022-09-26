@@ -3,9 +3,9 @@
 //Este es nuestro modelo
 
 export async function getTweets(){
-  const tweetsURL="https://gist.githubusercontent.com/edu-aguilar/8c9a509ec582d04da0640be2b0ede8d5/raw/f75c68645821f3c33d82d9c2c048215584d1d332/tweets.json"
-  //const tweetsURL="https://gist.githubuserconten.com/edu-aguilar/8c9a509ec582d04da0640be2b0ede8d5/raw/f75c68645821f3c33d82d9c2c048215584d1d332/tweets.json"
-  return new Promise(async (resolve, reject)=>{
+//  const tweetsURL="https://gist.githubusercontent.com/edu-aguilar/8c9a509ec582d04da0640be2b0ede8d5/raw/f75c68645821f3c33d82d9c2c048215584d1d332/tweets.json"
+  const tweetsURL="https://gist.githubuserconten.com/edu-aguilar/8c9a509ec582d04da0640be2b0ede8d5/raw/f75c68645821f3c33d82d9c2c048215584d1d332/tweets.json"
+//  return new Promise(async (resolve, reject)=>{
     /*
     setTimeout(()=>{
       const tweets= [
@@ -37,19 +37,22 @@ export async function getTweets(){
     } catch (error) {
       //Este error sólo salta si falla el dominio.
       //No falla por una falta de recurso(404)
-      reject('La dirección no existe');
+//      reject('La dirección no existe');
+      throw new Error('La dirección no existe');
     }
 
     if (!response.ok) {
-      reject('Tweets no encontrados');
+//      reject('Tweets no encontrados');
+     throw new Error('Tweets no encontrados');
     }
 
     try {
       const tweets=await response.json();
-      resolve(tweets);
-      //resolve([]);
+//      resolve(tweets);
+      return tweets;
     } catch (error) {
-      reject('Tweets ilegibles');
+//      reject('Tweets ilegibles');
+      throw new Error('Tweets ilegibles');
     }
-  });
+//  });
 }
